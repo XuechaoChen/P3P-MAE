@@ -1,5 +1,4 @@
-# P3P: Pseudo-3D Pre-training for Scaling 3D Voxel-based Masked Autoencoders
-[[arXiv]](https://arxiv.org/pdf/2408.10007)
+# P3P: Pseudo-3D Pre-training for Scaling 3D Voxel-based Masked Autoencoders [[arXiv]](https://arxiv.org/pdf/2408.10007)
 
 ## TODO List
 - [x] Release all checkpoints.
