@@ -1,10 +1,17 @@
-# P3P-MAE
-Official repository of "P3P: Pseudo-3D Pre-training for Scaling 3D Voxel-based Masked Autoencoders".
+# P3P: Pseudo-3D Pre-training for Scaling 3D Voxel-based Masked Autoencoders
+[[arXiv]](https://arxiv.org/pdf/2408.10007)
 
 ## TODO List
-- [ ] Release all checkpoints.
-- [ ] Release evaluation code and data.
-- [ ] Release pre-training code and data.
+- [x] Release all checkpoints.
+- [ ] Release data.
+- [ ] Release pre-training and fine-tuning code.
+- [ ] Write instuctions.
 
-## Model Card
+## Pre-trained Model Card
 See hugging face (https://huggingface.co/XuechaoChen/P3P-MAE)
+
+## Pre-training Dataset Card
+See hugging face (https://huggingface.co/datasets/XuechaoChen/P3P-Lift)
+
+## Fine-tuning Dataset Card
+See hugging face 
