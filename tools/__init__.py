@@ -1,0 +1,2 @@
+from .runner_Pseudo3D_pretrain import run_net as Pseudo3D_pretrain_run_net
+from .runner_Pseudo3D_finetune import run_net as Pseudo3D_finetune_run_net
