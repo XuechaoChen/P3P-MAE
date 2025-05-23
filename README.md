@@ -2,9 +2,9 @@
 
 ## TODO List
 - [x] Release all checkpoints.
+- [x] Release pre-training and fine-tuning code.
 - [ ] Release data.
-- [ ] Release pre-training and fine-tuning code.
-- [ ] Write instuctions.
+- [ ] Write instructions.
 
 ## Pre-trained Model Card
 See hugging face (https://huggingface.co/XuechaoChen/P3P-MAE)
