@@ -3,7 +3,7 @@
 ## TODO List
 - [x] Release all checkpoints.
 - [x] Release pre-training and fine-tuning code.
-- [ ] Release data.
+- [x] Release data.
 - [ ] Write instructions.
 
 ## Pre-trained Model Card
