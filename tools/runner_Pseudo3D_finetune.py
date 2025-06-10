@@ -8,7 +8,7 @@ from utils.AverageMeter import AverageMeter
 
 import numpy as np
 from datasets import data_transforms
-from pointnet2_ops import pointnet2_utils
+# from pointnet2_ops import pointnet2_utils
 from torchvision import transforms
 import utils.lr_sched as lr_sched
 

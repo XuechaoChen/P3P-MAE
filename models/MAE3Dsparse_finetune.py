@@ -6,7 +6,6 @@ import torch.nn.functional as F
 from .MAE3Dsparse import PatchEmbed3D, Block
 # import open3d as o3d
 from .build import MODELS
-from .pos_embed import interpolate_pos_embed
 from timm.models.layers import trunc_normal_
 
 

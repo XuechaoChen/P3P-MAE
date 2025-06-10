@@ -12,8 +12,6 @@ from sklearn.svm import LinearSVC
 import numpy as np
 from torchvision import transforms
 from datasets import data_transforms
-from pointnet2_ops import pointnet2_utils
-from models.pos_embed import interpolate_pos_embed
 from torch.cuda.amp import autocast, GradScaler
 
 

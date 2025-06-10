@@ -453,7 +453,7 @@ class Pseudo3D(VisionDataset):
 
     def __init__(self, config):
         super(Pseudo3D, self).__init__(config.ROOT)
-        samples = self.make_dataset(self.root, config.EXTRA, config.subset)
+        samples = self.make_dataset(self.root, config.subset)
         if len(samples) == 0:
             msg = "Found 0 files in subfolders of: {}\n".format(self.root)
             raise RuntimeError(msg)
@@ -494,7 +494,6 @@ class Pseudo3D(VisionDataset):
     @staticmethod
     def make_dataset(
         directory: str,
-        directory_ex: str,
         split: str,
     ) -> List[Tuple[str, int]]:
         instances = []
