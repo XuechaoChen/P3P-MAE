@@ -1,10 +1,9 @@
 export NODES=1
 export GPUS=4
-export RANK=0
 export MASTER_ADDR=127.0.0.1
 export PORT=19501
 
-torchrun --nnodes=$NODES --nproc_per_node=$GPUS --node_rank=$RANK --master_addr=$MASTER_ADDR --master-port=$PORT\
+OMP_NUM_THREADS=1 python3 -m torch.distributed.launch --nproc_per_node $GPUS --master_addr $MASTER_ADDR --master_port $PORT \
     main.py \
     --launcher pytorch \
     --sync_bn \

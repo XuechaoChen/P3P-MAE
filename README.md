@@ -1,10 +1,18 @@
 # P3P: Pseudo-3D Pre-training for Scaling 3D Voxel-based Masked Autoencoders [[arXiv]](https://arxiv.org/pdf/2408.10007)
+Main idea:
+
+3D pre-training is crucial to 3D perception tasks. Nevertheless, limited by the difficulties in collecting clean and complete 3D data, 3D pre-training has persistently faced data scaling challenges. In this work, we introduce a novel self-supervised pre-training framework that incorporates millions of images into 3D pre-training corpora by leveraging a large depth estimation model.
+
+Main results:
+
+![results](figures/results.png)
 
 ## TODO List
-- [x] Release all checkpoints.
-- [x] Release pre-training and fine-tuning code.
+- [x] Release checkpoints.
+- [x] Release pre-training and evaluation code.
 - [x] Release data.
-- [ ] Write instructions.
+- [x] Write pre-training instructions and check it.
+- [ ] Write fine-tuning instructions and check it.
 
 ## Pre-training Data Preparation
 Download "train_depth_v2.zip" at our hugging face [website](https://huggingface.co/datasets/XuechaoChen/P3P-Lift).
@@ -12,7 +20,7 @@ Download training set of ImageNet-1K at their [official website](https://www.ima
 First, sign up and get the access to download dataset.
 Second, download the "Training images (Task 1 & 2)." at https://image-net.org/challenges/LSVRC/2012/2012-downloads.php.
 
-Dataset organization:
+Extract them and organize as:
 ```
 │YourDataPath/
 ├──train/
@@ -23,10 +31,32 @@ Dataset organization:
 │   ├──.......
 ```
 
+Change the "ROOT" in config file "cfgs/dataset_configs/Pseudo3D.yaml".
+
+## Evaluation Data Preparation
+Download ScanObjectNN raw dataset at their official [website](https://hkust-vgd.github.io/scanobjectnn/).
+You need to register first.
+Then download "object_dataset.zip" and files under "PB_T50_RS/" at [website](https://hkust-vgd.ust.hk/scanobjectnn/raw/) (The extracting issue can refer to [this](https://github.com/getao/icae/issues/6)).
+
+Extract them and organize as:
+```
+│YourDataPath/
+├──object_dataset/
+│   ├──bed/
+│   ├──door/
+│   ├──.......
+├──PB_T50_RS/
+│   ├──bed/
+│   ├──door/
+│   ├──.......
+```
+
+Change the "ROOT" in config file "cfgs/dataset_configs/ScanObjectNN_objectbg_color.yaml".
+
 ## Pre-training Setup
 Basic environment:
 ```
-conda create -n p3pmae python=3.7 -y
+conda create -n p3pmae python=3.9 -y
 conda activate p3pmae
 conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=12.4 -c pytorch -c nvidia
 pip install -r requirements.txt
@@ -45,7 +75,7 @@ cd ./stack-chamfer
 MAX_JOBS=8 python3 setup.py install
 ```
 
-## Pre-training Models
+## Pre-train Models
 Pre-train the P3P sparse small model:
 ```
 bash pretrain_small.sh
@@ -56,12 +86,10 @@ Pre-train the P3P sparse base model:
 bash pretrain_base.sh
 ```
 
-## Fine-tuning Datasets
-See hugging face 
+## Fine-tune Models
+Download the weights of our pre-trained model at https://huggingface.co/XuechaoChen/P3P-MAE.
 
-## Pre-trained Model
-See hugging face (https://huggingface.co/XuechaoChen/P3P-MAE)
-
+...
 
 ## Citation
 ```
