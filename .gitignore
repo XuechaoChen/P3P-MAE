@@ -155,7 +155,7 @@ extensions/
 config.json
 start.sh
 download_*
-*.png
+
 *.jpg
 *.ply
 apdcephfs/

@@ -1,7 +1,9 @@
 # P3P: Pseudo-3D Pre-training for Scaling 3D Voxel-based Masked Autoencoders [[arXiv]](https://arxiv.org/pdf/2408.10007)
 Main idea:
 
-3D pre-training is crucial to 3D perception tasks. Nevertheless, limited by the difficulties in collecting clean and complete 3D data, 3D pre-training has persistently faced data scaling challenges. In this work, we introduce a novel self-supervised pre-training framework that incorporates millions of images into 3D pre-training corpora by leveraging a large depth estimation model.
+3D pre-training is crucial to 3D perception tasks. Nevertheless, limited by the difficulties in collecting clean and complete 3D data, 3D pre-training has persistently faced data scaling challenges. In this work, we introduce a novel self-supervised pre-training framework that incorporates millions of images into 3D pre-training corpora by leveraging a large depth estimation model. New pre-training corpora encounter new challenges in representation ability and embedding efficiency of models. Previous pre-training methods rely on farthest point sampling and k-nearest neighbors to embed a fixed number of 3D tokens. However, these approaches prove inadequate when it comes to embedding millions of samples that feature a diverse range of point numbers, spanning from 1,000 to 100,000. In contrast, we propose a tokenizer with linear-time complexity, which enables the efficient embedding of a flexible number of tokens. Accordingly, a new 3D reconstruction target is proposed to cooperate with our 3D tokenizer. Our method achieves state-of-the-art performance in 3D classification, few-shot learning, and 3D segmentation.
+
+![idea](figures/idea.png)
 
 Main results:
 
