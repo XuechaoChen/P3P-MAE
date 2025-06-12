@@ -84,12 +84,12 @@ MAX_JOBS=8 python3 setup.py install
 ## Pre-train Models
 Pre-train the P3P sparse small model:
 ```
-bash pretrain_small.sh
+bash scripts/pretrain_small.sh
 ```
 
 Pre-train the P3P sparse base model:
 ```
-bash pretrain_base.sh
+bash scripts/pretrain_base.sh
 ```
 
 ## Fine-tune Models
@@ -98,18 +98,18 @@ Download the weights of our pre-trained models at https://huggingface.co/Xuechao
 Finetune on ScanObjectNN datasets:
 ```
 # ScanObjectNN-BG, small model
-bash finetune_small_OBJBG.sh
+bash scripts/finetune_small_OBJBG.sh
 # ScanObjectNN-ONLY, small model
-bash finetune_small_OBJONLY.sh
+bash scripts/finetune_small_OBJONLY.sh
 # ScanObjectNN-PBT50RS, small model
-bash finetune_small_PBT50RS.sh
+bash scripts/finetune_small_PBT50RS.sh
 
 # ScanObjectNN-BG, base model
-bash finetune_base_OBJBG.sh
+bash scripts/finetune_base_OBJBG.sh
 # ScanObjectNN-ONLY, base model
-bash finetune_base_OBJONLY.sh
+bash scripts/finetune_base_OBJONLY.sh
 # ScanObjectNN-PBT50RS, base model
-bash finetune_base_PBT50RS.sh
+bash scripts/finetune_base_PBT50RS.sh
 ```
 
 ...
