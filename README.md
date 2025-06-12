@@ -14,7 +14,8 @@ Main results:
 - [x] Release pre-training and evaluation code.
 - [x] Release data.
 - [x] Write pre-training instructions and check it.
-- [ ] Write fine-tuning instructions and check it.
+- [x] Write fine-tuning instructions and check it.
+- [ ] Other evaluations.
 
 ## Pre-training Data Preparation
 Download "train_depth_v2.zip" at our hugging face [website](https://huggingface.co/datasets/XuechaoChen/P3P-Lift).
@@ -51,6 +52,9 @@ Extract them and organize as:
 │   ├──bed/
 │   ├──door/
 │   ├──.......
+```
+```
+cp /YourDataPath/object_dataset/split_new.txt /YourDataPath/PB_T50_RS/
 ```
 
 Change the "ROOT" in config file "cfgs/dataset_configs/ScanObjectNN_objectbg_color.yaml".
@@ -89,7 +93,24 @@ bash pretrain_base.sh
 ```
 
 ## Fine-tune Models
-Download the weights of our pre-trained model at https://huggingface.co/XuechaoChen/P3P-MAE.
+Download the weights of our pre-trained models at https://huggingface.co/XuechaoChen/P3P-MAE.
+
+Finetune on ScanObjectNN datasets:
+```
+# ScanObjectNN-BG, small model
+bash finetune_small_OBJBG.sh
+# ScanObjectNN-ONLY, small model
+bash finetune_small_OBJONLY.sh
+# ScanObjectNN-PBT50RS, small model
+bash finetune_small_PBT50RS.sh
+
+# ScanObjectNN-BG, base model
+bash finetune_base_OBJBG.sh
+# ScanObjectNN-ONLY, base model
+bash finetune_base_OBJONLY.sh
+# ScanObjectNN-PBT50RS, base model
+bash finetune_base_PBT50RS.sh
+```
 
 ...
 

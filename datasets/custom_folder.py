@@ -736,7 +736,7 @@ class ScanobjNNcolor_hardest(VisionDataset):
         split: str,
         reduce: bool,
     ) -> List[Tuple[str, int]]:
-        with open(os.path.join(directory, 'split.txt'), 'r') as f:
+        with open(os.path.join(directory, 'split_new.txt'), 'r') as f:
             lines = f.readlines()
 
         target_files = []
